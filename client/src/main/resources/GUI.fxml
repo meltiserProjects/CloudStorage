@@ -1,0 +1,41 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox fx:controller="ru.grigorev.client.MainController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center" stylesheets="styles.css">
+    <MenuBar>
+        <Menu text="Menu">
+            <MenuItem text="Open" onAction="#openFile"/>
+            <MenuItem text="Refresh All" onAction="#refreshAll"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Sign out" onAction="#signOut"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Exit" onAction="#exit"/>
+        </Menu>
+        <Menu text="About">
+            <MenuItem text="Source Code" onAction="#openLink"/>
+        </Menu>
+    </MenuBar>
+    <Label fx:id="mainLabel" alignment="CENTER"/>
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS">
+            <ListView fx:id="clientListView" VBox.vgrow="ALWAYS" onMouseClicked="#handleClientMouseClicked"/>
+            <HBox>
+                <Button text="Send file" onAction="#sendFile"
+                        HBox.hgrow="ALWAYS"/>
+                <Button text="Delete file" onAction="#deleteFileClient"
+                        HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS">
+            <ListView fx:id="serverListView" VBox.vgrow="ALWAYS"/>
+            <HBox>
+                <Button text="Download file" onAction="#downloadFile"
+                        HBox.hgrow="ALWAYS"/>
+                <Button text="Delete file" onAction="#deleteFileServer"
+                        HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </VBox>
+
+    </HBox>
+</VBox>

@@ -1,0 +1,16 @@
+.target/
+.out/
+*.class
+*.bat
+*.txt
+*.log
+*.iml
+.idea/
+client_storage/*
+server_storage/*
+client/target/*
+common/target/*
+server/target/*
+client/client.iml
+common/common.iml
+server/server.iml
